@@ -4,18 +4,20 @@ menu:
 
 widgets:
 - search
+- recent_posts
+- tagcloud
 - category
-- tag
+- twitter
 
 excerpt_link: Read More
 
 twitter:
-  username:
+  username: meinaozi
   show_replies: false
   tweet_count: 5
 
 addthis:
-  enable: true
+  enable: false
   pubid:
   facebook: true
   twitter: true
@@ -24,8 +26,8 @@ addthis:
 
 fancybox: true
 
-google_analytics:
-rss:
+google_analytics: UA-39023568-1
+rss: /atom.xml
 
 comment_provider: facebook
 # Facebook comment
