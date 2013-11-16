@@ -26,7 +26,7 @@
         <% } %>
         <% if (item.comment && config.disqus_shortname){ %>
         <div class="alignright">
-          <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a>
+          <a href="<%- item.permalink %>#disqus_thread" class="comment-link" data-disqus-identifier="<%- item.slug %>">Comments</a>
         </div>
         <% } %>
       <% } else { %>
