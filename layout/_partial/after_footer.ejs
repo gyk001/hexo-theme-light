@@ -19,11 +19,29 @@ var disqus_identifier = '<%= page.slug %>';
 <% if (theme.fancybox){ %>
 <link rel="stylesheet" href="http://cdn.staticfile.org/fancybox/2.1.5/jquery.fancybox.min.js" media="screen" type="text/css">
 <script src="http://cdn.staticfile.org/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<!--
+<link rel="stylesheet" href="http://cdn.staticfile.org/emojify.js/0.9.0/css/emojify.css" media="screen" type="text/css">
+<script src="http://cdn.staticfile.org/emojify.js/0.9.0/emojify.js"></script>
+-->
 <script type="text/javascript">
 (function($){
   $('.fancybox').fancybox();
+  /*
+  emojify.setConfig({
+	    emojify_tag_type: 'img',
+	    emoticons_enabled: true,
+	    people_enabled: true,
+	    nature_enabled: true,
+	    objects_enabled: true,
+	    places_enabled: true,
+	    symbols_enabled: true
+	});
+	emojify.run();
+	*/
 })(jQuery);
 </script>
 <% } %>
+
+
 
 <%- partial('baidu_analytics') %>
