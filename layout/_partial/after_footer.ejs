@@ -10,7 +10,11 @@ var disqus_identifier = '<%= page.slug %>';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments){ %>embed.js<% } else { %>count.js<% } %>';
+  <% if (page.comments){ %>
+  	dsq.src = 'http://go.disqus.com/embed.ignition.js';
+  <% } else { %>
+  	dsq.src = 'http://go.disqus.com/count.js';
+  <% } %>
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
