@@ -11,9 +11,9 @@ var disqus_identifier = '<%= page.slug %>';
   dsq.type = 'text/javascript';
   dsq.async = true;
   <% if (page.comments){ %>
-  	dsq.src = 'http://go.disqus.com/embed.ignition.js';
+  	dsq.src = '<%- qnurl("js/embed.ignition.js") %>';
   <% } else { %>
-  	dsq.src = 'http://go.disqus.com/count.js';
+    dsq.src = '<%- qnurl("js/count.js") %>';
   <% } %>
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
@@ -30,10 +30,8 @@ var disqus_identifier = '<%= page.slug %>';
 <script type="text/javascript">
 (function($){
   
-  $('.fancybox').attr('rel', 'gallery').fancybox(
-    {
+  $('.fancybox').attr('rel', 'gallery').fancybox({
     beforeLoad : function() {
-      debugger;
       var href = this.element.find('img').attr('src');
       this.href=href.replace(/\/thumbnail.jpg$/,'');
     }
