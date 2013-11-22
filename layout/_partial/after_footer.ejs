@@ -21,7 +21,7 @@ var disqus_identifier = '<%= page.slug %>';
 <% } %>
 
 <% if (theme.fancybox){ %>
-<link rel="stylesheet" href="http://cdn.staticfile.org/fancybox/2.1.5/jquery.fancybox.min.js" media="screen" type="text/css">
+<link rel="stylesheet" href="http://cdn.staticfile.org/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" type="text/css">
 <script src="http://cdn.staticfile.org/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
 <!--
 <link rel="stylesheet" href="http://cdn.staticfile.org/emojify.js/0.9.0/css/emojify.css" media="screen" type="text/css">
@@ -29,7 +29,16 @@ var disqus_identifier = '<%= page.slug %>';
 -->
 <script type="text/javascript">
 (function($){
-  $('.fancybox').fancybox();
+  
+  $('.fancybox').attr('rel', 'gallery').fancybox(
+    {
+    beforeLoad : function() {
+      debugger;
+      var href = this.element.find('img').attr('src');
+      this.href=href.replace(/\/thumbnail.jpg$/,'');
+    }
+  });
+
   /*
   emojify.setConfig({
 	    emojify_tag_type: 'img',
