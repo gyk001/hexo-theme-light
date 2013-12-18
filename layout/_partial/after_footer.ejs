@@ -11,9 +11,9 @@ var disqus_identifier = '<%= page.slug %>';
   dsq.type = 'text/javascript';
   dsq.async = true;
   <% if (page.comments){ %>
-  	dsq.src = '<%- qnurl("js/embed.ignition.js") %>';
+  	dsq.src = 'http://go.disqus.com/embed.js';
   <% } else { %>
-    dsq.src = '<%- qnurl("js/count.js") %>';
+    dsq.src = 'http://go.disqus.com/count.js';
   <% } %>
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
