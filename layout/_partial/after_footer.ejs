@@ -20,6 +20,21 @@ var disqus_identifier = '<%= page.slug %>';
 </script>
 <% } %>
 
+<% if(config.duoshuo_shortname){ %>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"guoyukun"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- Duoshuo Comment END -->
+<% } %>
+
 <% if (theme.fancybox){ %>
 <link rel="stylesheet" href="http://cdn.staticfile.org/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" type="text/css">
 <script src="http://cdn.staticfile.org/fancybox/2.1.5/jquery.fancybox.pack.js"></script>

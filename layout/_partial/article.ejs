@@ -26,9 +26,16 @@
         <% } %>
         <% if (item.comment && config.disqus_shortname){ %>
         <div class="alignright">
-          <a href="<%- item.permalink %>#disqus_thread" class="comment-link" data-disqus-identifier="<%- item.slug %>">Comments</a>
+          <a href="<%- item.permalink %>#comment" class="comment-link" data-disqus-identifier="<%- item.slug %>">Comments</a>
         </div>
-        <% } %>
+        <% } else if(item.comment && config.duoshuo_shortname){ %> 
+          <div class="alignright">
+          <a href="/post/<%- item.slug %>#comment" 
+            class="comment-link ds-thread-count" 
+            data-thread-key="<%- item.slug %>"
+            >Comments</a>
+        </div>
+        <%} %>
       <% } else { %>
         <%- partial('post/category') %>
         <%- partial('post/tag') %>
