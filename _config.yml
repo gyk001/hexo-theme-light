@@ -4,6 +4,7 @@ menu:
 
 widgets:
 - search
+- recent_comments
 - recent_posts
 - tagcloud
 - category
