@@ -1,0 +1,41 @@
+<style type="text/css">
+
+
+.pagepart a {
+  display: block;
+  padding: 5px 10px;
+  background: #ddd;
+  color: #999;
+  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  text-shadow: 0 0 1px #fff;
+  margin-top: 10px;
+}
+
+.pagepart a:hover {
+  background: #258fb8;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+}
+.pagepart .prev:before {
+  content: '\f053';
+  padding-right: 10px;
+  font-family: FontAwesome;
+}
+.pagepart .next:after {
+  content: '\f054';
+  padding-left: 10px;
+  font-family: FontAwesome;
+}
+
+</style>
+<div class="pagepart">
+
+
+ <% if (page.prev){ %>
+    <a href="<%- config.root %><%- page.prev.path %>" title="<%= page.prev.title %>" class="alignleft prev"><%= page.prev.title %></a>
+ <% } %>
+ <% if (page.next){ %>
+    <a href="<%- config.root %><%- page.next.path %>" title="<%= page.next.title %>" class="alignright next"><%= page.next.title %></a>
+ <% } %>
+</div>
